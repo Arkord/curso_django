@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load tailwind_filters %}
+
+
+{% block content %}
+
+<!-- source:https://codepen.io/owaiswiz/pen/jOPvEPB -->
+<div class="min-h-screen bg-gray-100 text-gray-900 flex justify-center">
+    <div class="max-w-screen-xl m-0 sm:m-10 bg-white shadow sm:rounded-lg flex justify-center flex-1">
+        <div class="lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
+           
+            <div class="mt-12 flex flex-col items-center">
+                <h1 class="text-2xl xl:text-3xl font-extrabold">
+                    Sign up
+                </h1>
+                <div class="w-full flex-1 mt-8">
+                    <div class="mx-auto max-w-xs">
+                        <!-- Aqui va mi formulario-->
+                         
+                        <form action="" method="post">
+                         {% csrf_token %}
+                         {{form|crispy}}
+                     
+                         <button
+                                     class="group inline-block rounded bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-[2px] hover:text-white focus:outline-none focus:ring active:text-opacity-75"
+                                     type="submit"
+                                   >
+                                     <span
+                                       class="block rounded-sm bg-white px-4 py-1 text-sm font-medium group-hover:bg-transparent"
+                                     >
+                                       Register
+                                     </span>
+                                   </button>
+                                 </form>
+                     </form>
+ 
+                         <p class="mt-6 text-xs text-gray-600 text-center">
+                             I have already an account
+                             <a href="{% url "login" %}" class="border-b border-gray-500 border-dotted">
+                                 Login
+                             </a>
+                            
+                         </p>
+                     </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="flex-1 bg-indigo-100 text-center hidden lg:flex">
+            <div class="m-12 xl:m-16 w-full bg-contain bg-center bg-no-repeat"
+                style="background-image: url('https://storage.googleapis.com/devitary-image-host.appspot.com/15848031292911696601-undraw_designer_life_w96d.svg');">
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+    
